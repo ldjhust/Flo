@@ -29,6 +29,9 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isAddButton" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnPushButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Szj-XD-La0"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jnw-qs-WqR" customClass="PushButtonView" customModule="Flo" customModuleProvider="target">
                                 <rect key="frame" x="275" y="480" width="50" height="50"/>
@@ -42,16 +45,58 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isAddButton" value="NO"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnPushButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HXN-Pk-Lb6"/>
+                                </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ahw-WG-lcu" customClass="CounterView" customModule="Flo" customModuleProvider="target">
+                                <rect key="frame" x="185" y="70" width="230" height="230"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9e-eI-oiH">
+                                        <rect key="frame" x="93" y="93" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="FCz-eg-iKq"/>
+                                            <constraint firstAttribute="width" constant="44" id="L1Z-5N-XdT"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="t9e-eI-oiH" firstAttribute="centerX" secondItem="ahw-WG-lcu" secondAttribute="centerX" id="2Vl-52-XEI"/>
+                                    <constraint firstAttribute="height" constant="230" id="4g3-jO-jx1"/>
+                                    <constraint firstAttribute="width" constant="230" id="AQB-77-Jvn"/>
+                                    <constraint firstItem="t9e-eI-oiH" firstAttribute="centerY" secondItem="ahw-WG-lcu" secondAttribute="centerY" id="ROZ-VE-LsL"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="counter">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="counterColor">
+                                        <color key="value" red="0.3411764705882353" green="0.85490196078431369" blue="0.83529411764705885" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="outlineColor">
+                                        <color key="value" red="0.13333333333333333" green="0.43137254901960786" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="jnw-qs-WqR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TWM-G0-W3p"/>
+                            <constraint firstItem="ahw-WG-lcu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UYX-Td-Or9"/>
                             <constraint firstItem="hdR-nw-vSK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="b5O-T3-lVO"/>
                             <constraint firstItem="jnw-qs-WqR" firstAttribute="top" secondItem="hdR-nw-vSK" secondAttribute="bottom" constant="5" id="eS3-fU-vpz"/>
                             <constraint firstItem="hdR-nw-vSK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="125" id="kN1-jg-hXS"/>
+                            <constraint firstItem="hdR-nw-vSK" firstAttribute="top" secondItem="ahw-WG-lcu" secondAttribute="bottom" constant="75" id="pla-SP-HII"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="counterLabel" destination="t9e-eI-oiH" id="NKY-ek-19c"/>
+                        <outlet property="counterView" destination="ahw-WG-lcu" id="fiM-DA-92g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
